@@ -4,7 +4,23 @@
 #define ALIEN_HEIGHT 8
 #define ALIEN_WIDTH 11
 #define _ 0x000000 //BLK
-#define X 0xFFFFFF //WHT
+#define X 0xFFFFFF //WH
+#define WHITE 0xFFFFFF
+
+class PlayerShip{
+
+public:
+	PlayerShip();
+	
+	int getX() { return this.xpos;}
+	int getY() { return this.ypos;}
+	void draw(uLCD_4DGL&);
+
+private:
+	int xpos;
+	int ypos;
+};
+
 
 class ScreenAliens{
 
@@ -12,9 +28,8 @@ public:
 	ScreenAliens();
 	ScreenAliens(int, int);
 	
-	virtual void draw();
+	virtual void draw(uLCD_4DGL&);
 	virtual void update();
-	virtual void sprite();
 
 	int getX() { return this.xpos; }
 	int getY() { return this.ypos; }
@@ -25,7 +40,6 @@ private:
 	int xpos;
 	int ypos;
 	bool alive;
-
 				
 };   
 
@@ -36,9 +50,8 @@ public:
 	AlienBob();
 	AlienBob(int, int);
 
-	void draw();
-	void update();
-	void sprite();	
+	void draw(uLCD_4DGL&);
+	void update();	
 
 private:
 
@@ -75,9 +88,8 @@ public:
 	AlienAlice();
 	AlienAlice(int, int);
 
-	void draw();
+	void draw(uLCD_4DGL&);
 	void update();
-	void sprite();
 
 private:
 

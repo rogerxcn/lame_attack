@@ -35,7 +35,7 @@ ScreenAliens* aliens[6];
 
 void draw_aliens(){
 	for (int i = 0; i < 6; i++) {
-		if (aliens[i] -> isAlive()) aliens[i]->draw();
+		if (aliens[i] -> isAlive()) aliens[i]->draw(uLCD);
 	}
 }
 
@@ -92,8 +92,8 @@ int main(){
 
 	while(true){
 		uLCD.cls();
-		player.draw();
-		draw_aliens(aliens);
+		player.draw(uLCD);
+		draw_aliens();
 		if (bulletExist) {
 			updateBullet();
 			drawBullet();
